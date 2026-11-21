@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRYOGARS Weather Stations</title>
+  <meta name="description" content="Raw 15-minute weather records from the CRYOGARS snow study sites.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&family=Inter:wght@400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/plotly.js-basic-dist-min@3.1.2/plotly-basic.min.js"
+          integrity="sha384-WBBKtNBoVJWspCtqWX1MPNqzQIlYUK+QIZ6ZHvwz1Rnye3neRMwpuNs5jZQ1FZjm"
+          crossorigin="anonymous"></script>
+  <script type="module" src="viewer.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path class="peak" d="M2 34 L15 10 L22 22 L27 15 L38 34 Z"/>
+      <path class="snow" d="M15 10 L19.2 17.2 L16.6 19.4 L14.4 17 L11.6 19.2 L10.9 17.6 Z"/>
+      <path class="snow" d="M27 15 L30.4 20.9 L28 22.4 L26.2 20.4 L24.3 21.6 L23.8 19.5 Z"/>
+    </svg>
+    <div>
+      <h1>CRYOGARS weather stations</h1>
+      <p class="sub">Raw 15-minute records from the snow study sites</p>
+    </div>
+  </div>
+  <div class="lab">
+    <img class="lablogo" src="cryogars_logo.png" width="670" height="265"
+         alt="CryoGARS: Cryosphere Geophysics and Remote Sensing">
+    <p id="status" class="status">Loading…</p>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="panel" aria-label="Plot options">
+    <div class="group">
+      <label class="label" for="station">Site</label>
+      <select id="station"></select>
+    </div>
+
+    <div class="group">
+      <div class="label">Time range</div>
+      <div class="presets" role="group" aria-label="Time range">
+        <button type="button" data-preset="24h">24 h</button>
+        <button type="button" data-preset="7d">7 days</button>
+        <button type="button" data-preset="30d">30 days</button>
+        <button type="button" data-preset="wy">Water year</button>
+      </div>
+      <form id="range-form" class="custom">
+        <label>From <input type="date" id="from" required></label>
+        <label>To <input type="date" id="to" required></label>
+        <button type="submit">Show</button>
+      </form>
+    </div>
+
+    <fieldset class="group">
+      <legend class="label">Variables</legend>
+      <div id="panels" class="panels"></div>
+    </fieldset>
+
+    <div class="group">
+      <div class="label" id="latest-label">Latest record</div>
+      <dl id="latest" class="stats"></dl>
+    </div>
+  </section>
+
+  <section class="plotcard" aria-label="Plots">
+    <div class="plothead" aria-live="polite">
+      <div class="label">Site</div>
+      <h2 id="site-title" class="sitetitle">–</h2>
+      <p id="site-range" class="sub"></p>
+    </div>
+    <div id="webcams" hidden>
+      <div id="webcam-row" class="webcams"></div>
+      <p class="hint">Webcam images update about every 30 min, 04:00–20:00 local time; reload the
+        page for the newest.</p>
+    </div>
+    <p id="message" class="hint" hidden></p>
+    <div id="plot"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Times are <span id="tz">MST (UTC-7)</span>, with no daylight saving; ranges end at the
+    site's latest record. Data are raw and provisional, with no quality control; snow depth is
+    shown unfiltered.</p>
+</footer>
+</body>
+</html>
