@@ -1,0 +1,381 @@
+{
+ "schema_version": 1,
+ "format_version": 1,
+ "catalog_version": 7,
+ "timezone": "MST (UTC-7)",
+ "utc_offset_hours": -7,
+ "record_interval_minutes": 15,
+ "panels": [
+  {
+   "id": "air_temp",
+   "label": "Air temperature",
+   "unit": "°C",
+   "default": true,
+   "traces": [
+    {
+     "id": "air_temp_avg",
+     "label": "avg",
+     "mode": "line"
+    },
+    {
+     "id": "air_temp_max",
+     "label": "max",
+     "mode": "line"
+    },
+    {
+     "id": "air_temp_min",
+     "label": "min",
+     "mode": "line"
+    }
+   ]
+  },
+  {
+   "id": "snow_depth",
+   "label": "Snow depth",
+   "unit": "m",
+   "default": true,
+   "traces": [
+    {
+     "id": "snow_depth_1",
+     "label": "sensor 1",
+     "mode": "line"
+    },
+    {
+     "id": "snow_depth_2",
+     "label": "sensor 2",
+     "mode": "line"
+    }
+   ]
+  },
+  {
+   "id": "swe",
+   "label": "Snow water equivalent",
+   "unit": "mm",
+   "default": false,
+   "traces": [
+    {
+     "id": "swe",
+     "label": "SWE",
+     "mode": "line"
+    }
+   ]
+  },
+  {
+   "id": "precip",
+   "label": "Precipitation (15 min)",
+   "unit": "mm",
+   "default": false,
+   "traces": [
+    {
+     "id": "precip_15min",
+     "label": "15-min total",
+     "mode": "bar"
+    }
+   ]
+  },
+  {
+   "id": "precip_accum",
+   "label": "Accumulated precipitation",
+   "unit": "mm",
+   "default": false,
+   "traces": [
+    {
+     "id": "precip_accum",
+     "label": "since gauge restart",
+     "mode": "line"
+    }
+   ]
+  },
+  {
+   "id": "rh",
+   "label": "Relative humidity",
+   "unit": "%",
+   "default": false,
+   "traces": [
+    {
+     "id": "rh",
+     "label": "RH",
+     "mode": "line"
+    }
+   ]
+  },
+  {
+   "id": "pressure",
+   "label": "Station pressure",
+   "unit": "hPa",
+   "default": false,
+   "traces": [
+    {
+     "id": "pressure",
+     "label": "station",
+     "mode": "line"
+    }
+   ]
+  },
+  {
+   "id": "wind_speed",
+   "label": "Wind speed",
+   "unit": "m/s",
+   "default": false,
+   "traces": [
+    {
+     "id": "wind_speed",
+     "label": "vector avg",
+     "mode": "line"
+    },
+    {
+     "id": "wind_gust",
+     "label": "gust (max)",
+     "mode": "line"
+    }
+   ]
+  },
+  {
+   "id": "wind_dir",
+   "label": "Wind direction",
+   "unit": "°",
+   "default": false,
+   "traces": [
+    {
+     "id": "wind_dir",
+     "label": "vector avg",
+     "mode": "markers"
+    }
+   ]
+  },
+  {
+   "id": "radiation",
+   "label": "Radiation",
+   "unit": "W/m²",
+   "default": false,
+   "traces": [
+    {
+     "id": "sw_in",
+     "label": "SW in",
+     "mode": "line"
+    },
+    {
+     "id": "sw_out",
+     "label": "SW out",
+     "mode": "line"
+    },
+    {
+     "id": "lw_in",
+     "label": "LW in",
+     "mode": "line"
+    },
+    {
+     "id": "lw_out",
+     "label": "LW out",
+     "mode": "line"
+    },
+    {
+     "id": "net_rad",
+     "label": "net",
+     "mode": "line"
+    }
+   ]
+  },
+  {
+   "id": "surface_temp",
+   "label": "Snow surface temperature",
+   "unit": "°C",
+   "default": false,
+   "traces": [
+    {
+     "id": "surface_temp",
+     "label": "SI-111",
+     "mode": "line"
+    }
+   ]
+  },
+  {
+   "id": "battery",
+   "label": "Battery voltage",
+   "unit": "V",
+   "default": false,
+   "traces": [
+    {
+     "id": "battery",
+     "label": "min",
+     "mode": "line"
+    }
+   ]
+  }
+ ],
+ "stations": [
+  {
+   "id": "BrundageWx",
+   "name": "Lakeview (Brundage)",
+   "traces": [
+    "air_temp_avg",
+    "air_temp_max",
+    "air_temp_min",
+    "snow_depth_1",
+    "swe",
+    "precip_15min",
+    "precip_accum",
+    "rh",
+    "pressure",
+    "wind_speed",
+    "wind_gust",
+    "wind_dir",
+    "sw_in",
+    "sw_out",
+    "lw_in",
+    "lw_out",
+    "net_rad",
+    "battery"
+   ],
+   "last_record": "2026-11-28 14:00:00",
+   "months": {
+    "2025-11": "761af1caa239",
+    "2025-12": "fcb1e5917bf0",
+    "2026-01": "bd6f5040d4f1",
+    "2026-02": "0a46a057c56e",
+    "2026-03": "41e83cbbbe4c",
+    "2026-04": "a726bf47131c",
+    "2026-05": "ad15be8043ab",
+    "2026-06": "84f02bee1e6a",
+    "2026-07": "c0802ccb49cb",
+    "2026-08": "eab5b786a2e6",
+    "2026-09": "89be53523dc3",
+    "2026-10": "17c4febe5054",
+    "2026-11": "ce63e5d21093"
+   },
+   "webcams": [
+    {
+     "id": "BrundageWx_1",
+     "label": "Webcam 1",
+     "path": "cam/BrundageWx_1.jpg",
+     "captured": "2026-11-28 14:05:02",
+     "version": "7bf3cf7a02fb",
+     "width": 640,
+     "height": 360
+    },
+    {
+     "id": "BrundageWx_2",
+     "label": "Webcam 2",
+     "path": "cam/BrundageWx_2.jpg",
+     "captured": "2026-11-28 14:05:02",
+     "version": "2e3c52344c1e",
+     "width": 640,
+     "height": 360
+    }
+   ],
+   "partner": {
+    "name": "Brundage Mountain",
+    "logo": "brundage_logo.png",
+    "url": "https://brundage.com/"
+   }
+  },
+  {
+   "id": "BogusWx",
+   "name": "Bogus Basin",
+   "traces": [
+    "air_temp_avg",
+    "air_temp_max",
+    "air_temp_min",
+    "snow_depth_1",
+    "rh",
+    "pressure",
+    "battery"
+   ],
+   "last_record": "2026-11-28 13:45:00",
+   "months": {
+    "2025-01": "c0fe99eed0dc",
+    "2025-02": "328f9e391987",
+    "2025-03": "d0d11b51acdd",
+    "2025-04": "ff7413bf5cb8",
+    "2025-05": "e1b80a2680ef",
+    "2025-06": "7aef83fb892b",
+    "2025-07": "ddd04ec30dcd",
+    "2025-08": "bc47a6b3fb3b",
+    "2025-09": "fd3403c1fcd6",
+    "2025-10": "32be0f499468",
+    "2025-11": "5d4b7967fb26",
+    "2025-12": "2bdaccf085fa",
+    "2026-01": "658844a2c10f",
+    "2026-02": "8777fa6eef4e",
+    "2026-03": "9b2603a0c68b",
+    "2026-04": "c4c100b51807",
+    "2026-05": "73c0a609df29",
+    "2026-06": "990e58935359",
+    "2026-07": "32772940d14f",
+    "2026-08": "a2e6bd9ec329",
+    "2026-09": "b47c36aebc5c",
+    "2026-10": "696f73a87144",
+    "2026-11": "fb01febcc2ff"
+   }
+  },
+  {
+   "id": "FreemanWx",
+   "name": "Freeman (Mores Creek Summit)",
+   "traces": [
+    "air_temp_avg",
+    "air_temp_max",
+    "air_temp_min",
+    "snow_depth_1",
+    "rh",
+    "pressure",
+    "wind_speed",
+    "wind_gust",
+    "wind_dir",
+    "sw_in",
+    "sw_out",
+    "lw_in",
+    "lw_out",
+    "net_rad",
+    "battery"
+   ],
+   "last_record": "2026-11-28 13:45:00",
+   "months": {
+    "2025-10": "a4952002348f",
+    "2025-11": "4b1096318ae5",
+    "2025-12": "1b4c7d1a52fe",
+    "2026-01": "3a41f8f69633",
+    "2026-02": "b150372be0b2",
+    "2026-03": "a0ac89846789",
+    "2026-04": "05ba7738718e",
+    "2026-05": "bdc480370f90",
+    "2026-06": "b4f67b566cd1",
+    "2026-07": "def30f1a29e7",
+    "2026-08": "729bc2400b9a",
+    "2026-09": "253fd253f7f4",
+    "2026-10": "a84fcadd9612",
+    "2026-11": "077e2dd9390b"
+   }
+  },
+  {
+   "id": "SummitCreekWx",
+   "name": "Summit Creek (Mores Creek Summit)",
+   "traces": [
+    "air_temp_avg",
+    "air_temp_max",
+    "air_temp_min",
+    "snow_depth_1",
+    "rh",
+    "pressure",
+    "wind_speed",
+    "wind_gust",
+    "wind_dir",
+    "surface_temp",
+    "battery"
+   ],
+   "last_record": "2026-11-28 14:00:00",
+   "months": {
+    "2026-10": "43a0af834131",
+    "2026-11": "925f78d1a52a"
+   }
+  }
+ ],
+ "webcam_schedule": {
+  "timezone": "America/Boise",
+  "first": "04:05",
+  "last": "20:05",
+  "every_minutes": 30,
+  "publish_lag_minutes": 15,
+  "grace_minutes": 5
+ },
+ "export_utc": "2026-11-28T21:09:08Z"
+}
